@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro de Anime — Jujutsu Kaisen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="bg"></div>
+  <div class="embers" id="embers"></div>
+
+  <main class="card">
+    <p class="kicker">CADASTRO DE ANIME</p>
+    <h1 id="formTitle">Registre seu anime</h1>
+    <p class="sub" id="formSub">Preencha os campos abaixo com as informações do anime. Campos marcados com <span class="required">*</span> são obrigatórios.</p>
+
+    <div class="banner error" id="formBanner">
+      <span class="mark">⚠</span>
+      <span id="formBannerText">Corrija os campos destacados antes de continuar.</span>
+    </div>
+
+    <form id="animeForm" novalidate>
+      <div class="field" id="field-titulo">
+        <label for="titulo">Título do anime <span class="required">*</span></label>
+        <input type="text" id="titulo" name="titulo" placeholder="Ex: Jujutsu Kaisen">
+        <span class="error-msg">Digite o título do anime.</span>
+      </div>
+
+      <div class="row">
+        <div class="field" id="field-genero">
+          <label for="genero">Gênero <span class="required">*</span></label>
+          <select id="genero" name="genero">
+            <option value="">Selecione</option>
+            <option>Ação</option>
+            <option>Aventura</option>
+            <option>Terror</option>
+            <option>Sobrenatural</option>
+            <option>Drama</option>
+            <option>Comédia</option>
+            <option>Fantasia</option>
+            <option>Romance</option>
+          </select>
+          <span class="error-msg">Selecione um gênero.</span>
+        </div>
+
+        <div class="field" id="field-ano">
+          <label for="ano">Ano de lançamento <span class="required">*</span></label>
+          <input type="number" id="ano" name="ano" placeholder="Ex: 2020" min="1950" max="2026">
+          <span class="error-msg">Informe um ano válido (1950–2026).</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field" id="field-estudio">
+          <label for="estudio">Estúdio <span class="required">*</span></label>
+          <input type="text" id="estudio" name="estudio" placeholder="Ex: MAPPA">
+          <span class="error-msg">Informe o estúdio responsável.</span>
+        </div>
+
+        <div class="field" id="field-episodios">
+          <label for="episodios">Nº de episódios <span class="required">*</span></label>
+          <input type="number" id="episodios" name="episodios" placeholder="Ex: 24" min="1">
+          <span class="error-msg">Informe um número válido de episódios.</span>
+        </div>
+      </div>
+
+      <div class="field" id="field-sinopse">
+        <label for="sinopse">Sinopse <span class="required">*</span></label>
+        <textarea id="sinopse" name="sinopse" placeholder="Escreva um breve resumo da história..."></textarea>
+        <span class="error-msg">Escreva uma sinopse com pelo menos 20 caracteres.</span>
+      </div>
+
+      <div class="actions">
+        <button type="submit">Cadastrar anime</button>
+      </div>
+    </form>
+
+    <div class="success-panel" id="successPanel">
+      <div class="banner success visible">
+        <span class="mark">✓</span>
+        <span>Anime cadastrado com sucesso!</span>
+      </div>
+      <h2 id="successTitle">—</h2>
+      <p>O registro abaixo foi salvo nesta página.</p>
+      <dl class="summary" id="successSummary"></dl>
+      <button type="button" class="again-btn" id="resetBtn">Cadastrar outro anime</button>
+    </div>
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
